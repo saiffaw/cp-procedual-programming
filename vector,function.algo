@@ -1,0 +1,28 @@
+
+FUNCTION dot_product(v1,v2) : INTEGER
+VAR
+    v1,v2: ARRAY_OF INTEGER;
+    i,ps:=0:INTEGER;
+BEGIN
+    FOR i FROM 0 TO v1.length-1 STEP 1  DO
+        ps:=ps+v1[i]*v2[i];
+    END_FOR
+    RETURN ps;
+END
+
+
+
+ALGORITHM Procedural_pragramming_checkpoint
+VAR
+    vectors =ARRAY_OF_FLOAT;
+    i,j:INTEGER;
+BEGIN
+
+    FOR i FROM 0 TO vectors.length STEP 1  DO
+        FOR j FROM i+1 TO vectors.length STEP 1  DO
+            IF (dot_product(vectors[i],vectors[j])=0) THEN
+                Write(vectors[i],"and",vectors[j],"are orthogonal");
+            END_IF
+        END_FOR
+    END_FOR
+END
